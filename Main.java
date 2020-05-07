@@ -57,23 +57,23 @@ public class Main {
             logs.add(action);
             switch (action) {
                 case "add":
-                    Main.add(cards, logs, mistakes);
+                    new EditCard().addCard(cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "remove":
-                    Main.remove(cards, logs, mistakes);
+                    new EditCard().removeCard(cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "import":
-                    Main.importFromFile(cards, logs, mistakes);
+                    new ImportExport().importFromFile(cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "export":
-                    Main.exportToFile(cards, logs, mistakes);
+                    new ImportExport().exportToFile(cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "ask":
-                    Main.ask(cards, logs, mistakes);
+                    new Ask().ask(cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "exit":
@@ -86,15 +86,15 @@ public class Main {
                     System.out.println();
                     break;
                 case "hardest card":
-                    Main.hardestCard(logs, mistakes);
+                    new StatisticCard().hardestCard(logs, mistakes);
                     System.out.println();
                     break;
                 case "reset stats":
-                    Main.resetStats(logs, mistakes);
+                    new StatisticCard().resetStats(logs, mistakes);
                     System.out.println();
                     break;
                 case "show":
-                    Main.show(cards);
+                    new StatisticCard().show(cards);
                     System.out.println();
                     break;
             }
