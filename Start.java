@@ -24,11 +24,11 @@ public class Start {
                     System.out.println();
                     break;
                 case "import":
-                    new Imports().importFromFile(cards, logs, mistakes);
+                    new Importing().importFromFile(fileName, cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "export":
-                    new Exports().exportToFile(cards, logs, mistakes);
+                    new Exporting().exportToFile(fileName, cards, logs, mistakes);
                     System.out.println();
                     break;
                 case "ask":
@@ -38,8 +38,8 @@ public class Start {
                 case "exit":
                     System.out.println("Bye bye!");
                     logs.add("Bye bye!");
-                    if (!fileName.equals("noArgs")) {
-                        new Exports().exportExit(fileName, cards, logs, mistakes);
+                    if (!fileName.equals("noArgs")) {// если придет аргумент
+                        new Exporting().exportToFile(fileName, cards, logs, mistakes);
                     }
                     break;
                 case "log":
