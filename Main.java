@@ -1,7 +1,5 @@
 package flashcards;
 
-import flashcards.interfaces.Import;
-
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -22,7 +20,7 @@ public class Main {
                                 Map<String, Integer> mistakes) {
 
         Start start = new Start();
-        Import importing = new Imports();
+        Importing importing = new Importing();
 
         String fileNameImport = "";
         String fileNameExport = "";
@@ -36,7 +34,7 @@ public class Main {
 
             } else if (args.get(0).equals("-export") && args.get(2).equals("-import")) {
                 fileNameImport = args.get(3);
-                importing.importStart(fileNameImport, cards, logs, mistakes);
+                importing.importFromFile(fileNameImport, cards, logs, mistakes);
                 fileNameExport = args.get(1);
                 start.start(fileNameExport, cards, logs, mistakes);
             }
@@ -44,7 +42,7 @@ public class Main {
         } else if (args.size() == 2) {
             if (args.contains("-import")) {
                 fileNameImport = args.get(1);
-                importing.importStart(fileNameImport, cards, logs, mistakes);
+                importing.importFromFile(fileNameImport, cards, logs, mistakes);
                 start.start("noArgs", cards, logs, mistakes);
 
             } else if (args.contains("-export")) {
