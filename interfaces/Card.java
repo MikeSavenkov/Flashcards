@@ -1,9 +1,9 @@
-package flashcards;
+package flashcards.interfaces;
 
 import java.util.List;
 import java.util.Map;
 
-interface Card {
+public interface Card {
 
     void addCard(Map<String, String> cards, List<String> logs, Map<String, Integer> mistakes);
 
